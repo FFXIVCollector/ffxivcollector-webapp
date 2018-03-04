@@ -43,11 +43,11 @@ jobs:
       - setup_remote_docker
 
       # build docker image
-      - run: sudo docker build -t ffxivcollectors/ffxivcollector-webapp .
+      - run: docker build -t ffxivcollectors/ffxivcollector-webapp .
 
 
       - deploy:
           name: Deploy docker image
           command: |
-            sudo docker login -u $DOCKER_USERNAME -p $DOCKER_SECRET
-            sudo docker push ffxivcollectors/ffxivcollector-webapp
+            docker login -u $DOCKER_USERNAME -p $DOCKER_SECRET
+            docker push ffxivcollectors/ffxivcollector-webapp
