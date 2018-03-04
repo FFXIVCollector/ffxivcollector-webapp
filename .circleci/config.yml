@@ -38,3 +38,13 @@ jobs:
 
       # build project
       - run: npm run build
+
+      # build docker image
+      - run: docker build -t ffxivcollectors/ffxivcollector-webapp .
+
+
+      - deploy:
+          name: Deploy docker image
+          command: |
+            docker login -u $DOCKER_USERNAME -p $DOCKER_SECRET
+            docker push ffxivcollectors/ffxivcollector-webapp
