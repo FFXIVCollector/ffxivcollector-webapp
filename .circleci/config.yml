@@ -40,8 +40,7 @@ jobs:
       - run: npm run build
 
       # required to run docker commands within circle ci
-      - setup_remote_docker:
-          docker_layer_caching: true
+      - setup_remote_docker
 
       # build docker image
       - run: sudo docker build -t ffxivcollectors/ffxivcollector-webapp .
