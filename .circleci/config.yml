@@ -19,6 +19,10 @@ jobs:
     steps:
       - checkout
 
+      # required to run docker commands within circle ci
+      - setup_remote_docker:
+          docker_layer_caching: true
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -40,11 +44,11 @@ jobs:
       - run: npm run build
 
       # build docker image
-      - run: docker build -t ffxivcollectors/ffxivcollector-webapp .
+      - run: sudo docker build -t ffxivcollectors/ffxivcollector-webapp .
 
 
       - deploy:
           name: Deploy docker image
           command: |
-            docker login -u $DOCKER_USERNAME -p $DOCKER_SECRET
-            docker push ffxivcollectors/ffxivcollector-webapp
+            sudo docker login -u $DOCKER_USERNAME -p $DOCKER_SECRET
+            sudo docker push ffxivcollectors/ffxivcollector-webapp
