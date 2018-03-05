@@ -34,7 +34,16 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      # - run: npm test
+      - run: npm run test:ci
+
+      # store under artifacts
+      - store_artifacts:
+          path: test-results/
+          destination: tr1
+
+      # store the test results
+      - store_test_results:
+          path: test-results/
 
       # build project
       - run: npm run build
