@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import {MatButtonModule, MatIconModule, MatToolbarModule} from '@angular/material';
+import {MaterialModule} from './material.module';
 
 
 @NgModule({
@@ -14,9 +15,7 @@ import {MatButtonModule, MatIconModule, MatToolbarModule} from '@angular/materia
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
