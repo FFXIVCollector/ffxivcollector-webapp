@@ -1,19 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #333333;
   color: white;
+  background-image: url("assets/background.jpg");
+}
+
+nav.sticky {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
 
 main {
   width: 100vw;
-  height: 100vh;
+  height: 250vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+footer > .top {
+  background-color: #313C42;
+  display: flex;
+  padding: 50px;
+}
+
+footer > .bottom {
+  background-color: #465A63;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+#topImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  opacity: 0.8;
+  background-color: white;
+  color: black;
 }

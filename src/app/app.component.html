@@ -1,7 +1,37 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
+<div #jumbotron id="topImage">
+    <h2>Final Fantasy XIV Collector</h2>
+    <h3>Minions and mounts collection site</h3>
+</div>
+
+<nav #navbar>
+  <mat-toolbar color="primary" class="mat-elevation-z6" >
+    <button mat-button >
+      <h3>Home</h3>
+    </button>
+  </mat-toolbar>
+</nav>
+
 <main>
-  <h3>FFXIV Collector</h3>
-  <p>This site is currently under development.</p>
+  <router-outlet></router-outlet>
 </main>
 
-<router-outlet></router-outlet>
+
+<footer>
+
+  <div class="bottom">
+    <div>
+      <div>FFXIV Collector © 2016-2018 Andreas Heyert</div>
+    </div>
+    <span style="flex: 1 0 auto;"></span>
+    <button mat-button (click)="this.goToGitHub()">
+      <mat-icon>code</mat-icon>
+      <span>Code on GitHub</span>
+    </button>
+    <button mat-button (click)="this.goToTaiga()">
+      <mat-icon>developer_board</mat-icon>
+      <span>Project on Taiga</span>
+    </button>
+  </div>
+</footer>
